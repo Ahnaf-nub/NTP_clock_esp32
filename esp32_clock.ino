@@ -61,27 +61,27 @@ void loop() {
   else if ((pressure >= 990) && (pressure <= 996.4)) {
     pred = "Stormy";
   }
+  //time part
   tft.setTextColor(ST77XX_YELLOW, ST77XX_BLACK);
   tft.setTextSize(2);
   tft.setCursor(0, 5);
-  //tft.println(String(timeClient.getHours()) + ":" + String(timeClient.getMinutes()));
   tft.println(String(timeClient.getFormattedTime()));
-
+  //day part
   tft.setTextColor(ST77XX_GREEN, ST77XX_BLACK);
   tft.setTextSize(2);
   tft.setCursor(120, 5);
   tft.println(arr_days[day]);
-
+  //date part
   tft.setTextColor(ST77XX_CYAN, ST77XX_BLACK);
   tft.setTextSize(2);
   tft.setCursor(20, 32);
   tft.println(date);
-
+  //weather prediction part
   tft.setTextColor(ST77XX_YELLOW, ST77XX_BLACK);
   tft.setTextSize(2);
   tft.setCursor(0, 60);
   tft.println(String(pred));
-
+  //temperature part
   tft.setTextColor(ST77XX_GREEN, ST77XX_BLACK);
   tft.setTextSize(2);
   tft.setCursor(112, 60);
@@ -91,7 +91,7 @@ void loop() {
 
 void connectToWifi() {
   tft.setTextSize(2);
-  WiFi.begin("Ahnaf", "Ahnafhaq12345");
+  WiFi.begin("", ""); //ssid and pass
   tft.print("Connecting");
   while (WiFi.status() != WL_CONNECTED) {
     digitalWrite(LED_BUILTIN, HIGH);

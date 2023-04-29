@@ -11,7 +11,7 @@
 #define TFT_DC   11
 #define TFT_MOSI 33  // Data out
 #define TFT_SCLK 18  // Clock out
-#define TFT_BCK 3 //Backlight
+
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "bd.pool.ntp.org", 21600);
 String arr_days[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
